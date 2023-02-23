@@ -15,7 +15,8 @@ class PetCard extends StatelessWidget {
         children: [
           Expanded(
             child: Image.network(
-              pet.image,
+              pet.image ??
+                  "https://cdn.britannica.com/50/193450-050-823D5D52/Kuwait-city.jpg",
               fit: BoxFit.cover,
               width: double.infinity,
             ),
@@ -26,9 +27,9 @@ class PetCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(pet.name),
-                  Text("Age: ${pet.age}"),
-                  Text("Gender: ${pet.gender}"),
+                  Text(pet.name!),
+                  Text("Age: ${pet.age!}"),
+                  Text("Gender: ${pet.gender!}"),
                   ElevatedButton(
                     onPressed: () {},
                     child: const Text("Adopt"),
