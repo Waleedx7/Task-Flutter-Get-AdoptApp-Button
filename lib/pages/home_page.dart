@@ -1,5 +1,7 @@
 import 'package:adopt_app/models/pet.dart';
+import 'package:adopt_app/providers/auth_provider.dart';
 import 'package:adopt_app/providers/pets_provider.dart';
+import 'package:adopt_app/widgets/drawer_page.dart';
 import 'package:adopt_app/widgets/pet_card.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -14,33 +16,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Pet Adopt"),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Text('Please Signup or Signin'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text('Sign Up'),
-              trailing: const Icon(Icons.login),
-              onTap: () {
-                context.push('/signup');
-              },
-            ),
-            ListTile(
-              title: const Text("Signin"),
-              trailing: const Icon(Icons.login),
-              onTap: () {
-                context.push('/signin');
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: Drawer(child: DrawerList()),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
