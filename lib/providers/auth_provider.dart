@@ -1,0 +1,14 @@
+import 'package:adopt_app/models/users.dart';
+import 'package:adopt_app/services/auth_services.dart';
+import 'package:flutter/material.dart';
+
+class AuthProvider extends ChangeNotifier {
+  String token = "";
+  late User user;
+
+  void signup(User user) async {
+    token = await AuthServices().signup(user: user);
+    print("you have benn signed up with token$token");
+    notifyListeners();
+  }
+}

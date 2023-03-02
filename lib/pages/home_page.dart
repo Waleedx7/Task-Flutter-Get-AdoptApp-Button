@@ -14,6 +14,25 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Pet Adopt"),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Text('My App'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Sign Up'),
+              onTap: () {
+                context.push('/signup');
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
