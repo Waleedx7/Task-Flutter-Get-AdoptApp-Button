@@ -19,15 +19,23 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              child: Text('My App'),
+              child: Text('Please Signup or Signin'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
               title: Text('Sign Up'),
+              trailing: const Icon(Icons.login),
               onTap: () {
                 context.push('/signup');
+              },
+            ),
+            ListTile(
+              title: const Text("Signin"),
+              trailing: const Icon(Icons.login),
+              onTap: () {
+                context.push('/signin');
               },
             ),
           ],

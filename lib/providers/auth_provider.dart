@@ -11,4 +11,9 @@ class AuthProvider extends ChangeNotifier {
     print("you have benn signed up with token$token");
     notifyListeners();
   }
+
+  void signin(User user) async {
+    token = await AuthServices().signin(user: user);
+    print(token);
+  }
 }
